@@ -31,13 +31,6 @@ except:
     pass
 
 
-# trello = TrelloClient(
-#     api_key='37a59709b21da79660ca225f2244e31a',
-#     api_secret='5c1231c0e3fd572e013407155ed0bb5615ef59f871aea3b064917fd625b1a019',
-#     token='your-oauth-token-key',
-#     token_secret='your-oauth-token-secret'
-# )
-
 @client.command(name='ChoresRulet',
                 description="assigns chores.",
                 brief="Answers from the beyond.",
