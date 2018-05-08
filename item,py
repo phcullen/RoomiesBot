@@ -1,0 +1,33 @@
+# class for sorting input and exporting to SQLite DB
+
+
+import sqlite3
+
+class Item:
+    """Item class"""
+
+    def __init__(self, store, qnt, item, requester):
+        self.store = store
+        self.qnt = qnt
+        self.item = item
+        self.requester = requester
+
+
+    @classmethod
+    def from_string(cls, arg, author):
+        args = arg.split(" ") # split argument into list
+        if len(args) < 2:
+            client.say('fuck you' + context.message.author.mention)
+            return
+        store = args[0]  # take second word as store name
+        args = args[1:]
+        try:
+            if isinstance(int(args[0]), int):  # if next argument is an int store as qnt
+                qnt = args[0]
+                item = " ".join(args[1:])  # join the rest of the argument and use as item
+        except:
+            qnt = 1
+            item = " ".join(args)  # join the rest of the argument and use as item
+        return cls(store, qnt, item, author)
+
+    def export_to_DB(self):
